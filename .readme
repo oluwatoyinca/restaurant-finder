@@ -1,0 +1,36 @@
+This is a restaurant finder application.
+A user without authentication, can add restaurants with position between 1 - 200, get a list of restaurants and filter by distance, and can deleting all restaurants.
+
+Using Application with PostMan
+    Adding a restaurant:
+        POST /restaurant raw JSON
+        Sample accepted JSON:
+            const requestBody = {
+                "name": "123",
+                "position": 200,
+                "category": "Pizza",
+                "rating": 5
+            }
+        Requirements:
+            All properties are required
+            Position must be between 0-200
+            Rating must be between 1-5
+            Two restaurants can't be in the same position
+
+    Getting list of restaurants:
+        POST /restaurants raw JSON
+        Sample accepted JSON:
+            const getRestaurantsBody = {
+                "category": "Pizza",
+                "orderPriority": "rating",
+                "distanceLimit": 50,
+                "position": 94
+            }
+        Requirements:
+            All properties except distanceLimit are required
+            Position of user must be between 0-200
+            A user should not be in the same position of a restaurant
+            
+    Deleting restaurants:
+        DELETE /restaurants
+        This will delete all restaurants
