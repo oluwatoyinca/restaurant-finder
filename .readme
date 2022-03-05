@@ -30,7 +30,9 @@ Using Application with PostMan
             All properties except distanceLimit are required
             Position of user must be between 0-200
             A user should not be in the same position of a restaurant
-            
+
     Deleting restaurants:
         DELETE /restaurants
         This will delete all restaurants
+
+Details on requirements can be gotten from test/candidate.test.js
